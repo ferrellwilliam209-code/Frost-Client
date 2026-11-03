@@ -1,9 +1,9 @@
 {
-  "name": "Frost Client",
-  "short_name": "Frost",
+  "name": "Stay Frost",
+  "short_name": "Stay Frost",
   "start_url": "./",
   "display": "standalone",
   "background_color": "#071426",
   "theme_color": "#071426",
-  "description": "Frost Client browser launcher and preference manager."
+  "description": "Stay Frost browser game hub and Frost client."
 }
