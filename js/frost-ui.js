@@ -3,36 +3,7 @@
   const $ = (s, root=document) => root.querySelector(s);
   const hero = $(".hero");
   if (!hero) return;
-
-  // Frost snow canvas: deliberately capped for low-powered devices.
-  const canvas = document.createElement("canvas");
-  canvas.id = "frostSnow";
-  canvas.setAttribute("aria-hidden", "true");
-  hero.prepend(canvas);
-  const ctx = canvas.getContext("2d");
-  const reduced = matchMedia("(prefers-reduced-motion: reduce)");
-  const saveData = navigator.connection && navigator.connection.saveData;
-  let flakes = [], raf = 0, w = 0, h = 0, last = 0;
-  const cap = 8; // minimal particle count for low-end devices
-  function resize() {
-    const dpr = Math.min(devicePixelRatio || 1, 1.5);
-    w = hero.clientWidth; h = hero.clientHeight;
-    canvas.width = Math.round(w*dpr); canvas.height = Math.round(h*dpr);
-    ctx.setTransform(dpr,0,0,dpr,0,0);
-    flakes = Array.from({length:cap},()=>({x:Math.random()*w,y:Math.random()*h,r:Math.random()*1.8+.5,v:Math.random()*.35+.12,dx:Math.random()*.24-.12}));
-  }
-  function paint(t) {
-    if (t-last < 100) { raf=requestAnimationFrame(paint); return; }
-    last=t; ctx.clearRect(0,0,w,h);
-    for(const f of flakes){ctx.beginPath();ctx.arc(f.x,f.y,f.r,0,Math.PI*2);ctx.fillStyle="rgba(207,240,255,.58)";ctx.fill();f.y+=f.v;f.x+=f.dx;if(f.y>h+4){f.y=-4;f.x=Math.random()*w;}if(f.x<0)f.x=w;if(f.x>w)f.x=0;}
-    raf=requestAnimationFrame(paint);
-  }
-  function start(){if(false && !reduced.matches&&!saveData&&!document.hidden&&!raf)raf=requestAnimationFrame(paint);}
-  function stop(){cancelAnimationFrame(raf);raf=0;}
-  resize(); start();
-  addEventListener("resize",resize,{passive:true});
-  document.addEventListener("visibilitychange",()=>document.hidden?stop():start());
-  reduced.addEventListener?.("change",()=>reduced.matches?stop():start());
+  // Static hero background: no canvas animation or particle loop on low-end devices.
 
   // Add version shortcuts without replacing the existing 26.2 launch link.
   const actions = $(".hero .actions");
@@ -77,10 +48,8 @@
   $("#frostReset").addEventListener("click",()=>{prefs={...defaults};apply()});
   apply();
 
-  // Show actual preview-page frame cadence, not game FPS.
-  let frames=0,stamp=performance.now(),shown=0;
-  function fpsLoop(now){frames++;if(now-stamp>=750){shown=Math.round(frames*1000/(now-stamp));$("#frostFps").textContent=shown;frames=0;stamp=now;}requestAnimationFrame(fpsLoop);}
-  if(!reduced.matches)requestAnimationFrame(fpsLoop);else $("#frostFps").textContent="Paused";
+  // Do not run a permanent animation loop just to animate a launcher preview.
+  $("#frostFps").textContent = "Preview only";
 
   const held=new Set();
   function updateKeys(){document.querySelectorAll("[data-fkey]").forEach(k=>k.classList.toggle("on",held.has(k.dataset.fkey)));}
