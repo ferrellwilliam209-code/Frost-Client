@@ -30,3 +30,24 @@
 [data-frost-style="modern"] .frost-widget{border-radius:10px}
 @media(max-width:720px){.frost-hud-grid{grid-template-columns:1fr}.frost-preview{min-height:235px}.hero{padding:30px 22px}}
 @media(prefers-reduced-motion:reduce){.btn,.tab{transition:none}#frostSnow{display:none}}
+
+
+/* Stay Frost: clean, low-overhead layout */
+:root{--bg:#071321;--panel:#0d1d2e;--line:#1c3449;--ice:#b9eaff;--muted:#91a9bd}
+html{scroll-behavior:smooth}
+body{background:#071321}
+.shell{max-width:1120px;padding-inline:clamp(16px,3vw,32px)}
+.top{height:68px}
+.hero{margin:26px 0 24px;padding:clamp(26px,5vw,52px);border-radius:16px;background:linear-gradient(120deg,#102b42,#0a1a2b 70%);box-shadow:none}
+.hero h1{font-size:clamp(38px,5.5vw,60px);letter-spacing:-1.5px}
+.hero p{max-width:580px}
+.card{background:#0c1d2e;border-color:#203b52;box-shadow:none}
+.btn,.tab{box-shadow:none;transition:background-color .12s ease,border-color .12s ease}
+.btn:hover,.tab:hover{transform:none;box-shadow:none}
+.frost-widget{backdrop-filter:none;box-shadow:none}
+.frost-preview{background:#0a1a2a}
+#frostSnow{display:none}
+.frost-launches a{background:#0e263a;border-color:#25435b}
+.notice{background:#0c1e30}
+:focus-visible{outline:2px solid #9de3ff;outline-offset:3px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
