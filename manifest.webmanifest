@@ -1,9 +1,15 @@
 {
+  "id": "./",
   "name": "Stay Frost",
-  "short_name": "Stay Frost",
+  "short_name": "Frost",
   "start_url": "./",
+  "scope": "./",
   "display": "standalone",
+  "orientation": "any",
   "background_color": "#071426",
   "theme_color": "#071426",
-  "description": "Stay Frost browser game hub and Frost client."
+  "description": "Stay Frost browser game hub and Frost client.",
+  "icons": [
+    { "src": "./icons/frost.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
 }
