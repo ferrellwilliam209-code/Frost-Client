@@ -13,7 +13,7 @@
   const reduced = matchMedia("(prefers-reduced-motion: reduce)");
   const saveData = navigator.connection && navigator.connection.saveData;
   let flakes = [], raf = 0, w = 0, h = 0, last = 0;
-  const cap = Math.min(42, Math.max(16, Math.floor(innerWidth / 28)));
+  const cap = 8; // minimal particle count for low-end devices
   function resize() {
     const dpr = Math.min(devicePixelRatio || 1, 1.5);
     w = hero.clientWidth; h = hero.clientHeight;
@@ -22,12 +22,12 @@
     flakes = Array.from({length:cap},()=>({x:Math.random()*w,y:Math.random()*h,r:Math.random()*1.8+.5,v:Math.random()*.35+.12,dx:Math.random()*.24-.12}));
   }
   function paint(t) {
-    if (t-last < 32) { raf=requestAnimationFrame(paint); return; }
+    if (t-last < 100) { raf=requestAnimationFrame(paint); return; }
     last=t; ctx.clearRect(0,0,w,h);
     for(const f of flakes){ctx.beginPath();ctx.arc(f.x,f.y,f.r,0,Math.PI*2);ctx.fillStyle="rgba(207,240,255,.58)";ctx.fill();f.y+=f.v;f.x+=f.dx;if(f.y>h+4){f.y=-4;f.x=Math.random()*w;}if(f.x<0)f.x=w;if(f.x>w)f.x=0;}
     raf=requestAnimationFrame(paint);
   }
-  function start(){if(!reduced.matches&&!saveData&&!document.hidden&&!raf)raf=requestAnimationFrame(paint);}
+  function start(){if(false && !reduced.matches&&!saveData&&!document.hidden&&!raf)raf=requestAnimationFrame(paint);}
   function stop(){cancelAnimationFrame(raf);raf=0;}
   resize(); start();
   addEventListener("resize",resize,{passive:true});
@@ -39,7 +39,7 @@
   if(actions){
     const versions=document.createElement("div");
     versions.className="frost-launches";
-    versions.innerHTML='<a href="./play.html?version=1.8.8" >Launch 1.8.8</a><a href="./play.html?version=1.12.2" >Launch 1.12.2</a><a href="https://eaglercraft.com/play?version=26.2" target="_blank" rel="noopener">Launch 26.2 ↗</a><a href="https://eaglercraft.com/play?version=26.3" target="_blank" rel="noopener">Launch 26.3 ↗</a>';
+    versions.innerHTML='<a href="./play.html?version=1.8.8" >Launch 1.8.8</a><a href="./play.html?version=1.12.2" >Launch 1.12.2</a><a href="./play.html?version=26.2" >Launch 26.2</a><a href="./play.html?version=26.3" >Launch 26.3</a>';
     actions.insertAdjacentElement("afterend",versions);
   }
 
