@@ -39,7 +39,7 @@
   if(actions){
     const versions=document.createElement("div");
     versions.className="frost-launches";
-    versions.innerHTML='<a href="https://eaglercraft.com/play?version=1.8.8" target="_blank" rel="noopener">Launch 1.8.8 ↗</a><a href="https://eaglercraft.com/play?version=1.12.2" target="_blank" rel="noopener">Launch 1.12.2 ↗</a>';
+    versions.innerHTML='<a href="https://eaglercraft.com/play?version=1.8.8" target="_blank" rel="noopener">Launch 1.8.8 ↗</a><a href="https://eaglercraft.com/play?version=1.12.2" target="_blank" rel="noopener">Launch 1.12.2 ↗</a><a href="https://eaglercraft.com/play?version=26.2" target="_blank" rel="noopener">Launch 26.2 ↗</a><a href="https://eaglercraft.com/play?version=26.3" target="_blank" rel="noopener">Launch 26.3 ↗</a>';
     actions.insertAdjacentElement("afterend",versions);
   }
 
