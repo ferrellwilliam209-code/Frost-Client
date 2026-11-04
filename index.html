@@ -48,9 +48,9 @@ button,input{font:inherit}button{cursor:pointer}.app{max-width:1500px;margin:aut
 <section class="launch-panel" id="launcher">
  <div class="launch-head"><div><div class="eyebrow">READY WHEN YOU ARE</div><h2>Frost Client Launcher</h2></div><span class="tag">EAGLERCRAFT RUNTIME SLOT</span></div>
  <div class="frame-placeholder" id="placeholder"><div><strong>❄ Your game space is ready</strong><p>Press Launch Frost Client to load the configured browser game runtime below. You can replace the runtime URL in the launchRuntime() function when your own build is ready.</p></div></div>
- <div class="game-frame-wrap" id="frameWrap"><iframe class="game-frame" id="gameFrame" title="Frost Client game runtime" allow="fullscreen; autoplay; gamepad" allowfullscreen></iframe></div>
+ <div class="game-frame-wrap" id="frameWrap"><iframe class="game-frame" id="gameFrame" title="Frost Client game runtime" allow="fullscreen; autoplay; gamepad; pointer-lock" allowfullscreen></iframe></div>
  <div class="launch-controls" style="margin-top:14px"><button class="btn primary" id="launchButton">▶ Launch Frost Client</button><button class="btn" id="reloadButton" hidden>↻ Reload game</button><button class="btn" id="fullscreenButton" hidden>⛶ Fullscreen</button></div>
- <p class="footnote" id="launchStatus">Runtime not loaded. This dashboard does not include Minecraft game files or a Java/Bedrock runtime.</p>
+ <p class="footnote" id="launchStatus">Local FrostCraft game is included. Official Minecraft Java/Bedrock runtimes are not included.</p>
 </section>
 </main>
 <footer>FROST CLIENT · INDEPENDENT COMMUNITY PROJECT · NOT AFFILIATED WITH MOJANG OR MICROSOFT</footer>
@@ -115,12 +115,12 @@ $("openAccounts").onclick=openAccounts;$("manageAccounts").onclick=openAccounts;
 $("accountModal").addEventListener("click",e=>{if(e.target===$("accountModal"))closeAccounts()});
 $("heroMods").onclick=()=>$("marketplace").scrollIntoView({behavior:"smooth"});
 /* Runtime adapter: replace this URL with the URL of your own compiled, authorized browser game build. */
-const RUNTIME_URL="https://eaglercraft.com/play?version=26.2";
+const RUNTIME_URL="./game.html?version=26.2&embedded=1";
 function launchRuntime(){
  const frame=$("gameFrame");if(!frame.src||frame.src==="about:blank")frame.src=RUNTIME_URL;
  $("placeholder").style.display="none";$("frameWrap").classList.add("visible");
  $("reloadButton").hidden=false;$("fullscreenButton").hidden=false;
- $("launchStatus").textContent="Loading external Eaglercraft runtime. If it refuses to display here, open the runtime in its own tab or use a host that permits iframe embedding.";
+ $("launchStatus").textContent="Loading FrostCraft, the browser game included in this repository. This is the local Frost game build, not the official Minecraft Java or Bedrock client.";
  toast("Frost runtime launch requested");
 }
 $("launchButton").onclick=launchRuntime;$("heroLaunch").onclick=()=>{$("launcher").scrollIntoView({behavior:"smooth"});launchRuntime()};
