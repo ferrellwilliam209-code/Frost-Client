@@ -18,18 +18,80 @@
 .menuFooter{display:flex;justify-content:space-between;gap:10px;margin:22px -8px 0;color:#ddd;font:10px Arial,sans-serif;text-shadow:1px 1px #222}
 .menuHint{font:10px Arial,sans-serif;color:#ddd;margin-top:9px;text-shadow:1px 1px #222}
 @media(max-width:520px){#eaglerMenu{padding:10px 12px}.eaglerLogo{height:120px}.logoMain{font-size:48px}.menuButtons{width:min(310px,100%)}.menuFooter{font-size:8px}}
+
+/* Frost x Lunar-inspired client interface: original styling, not Lunar assets */
+#overlay{padding:0;background:radial-gradient(ellipse at 72% 42%,#123e5a88,transparent 48%),linear-gradient(125deg,#070b13ed,#0b1424f2 60%,#101d31f0);backdrop-filter:blur(16px)}
+#lunarShell{width:min(1000px,96vw);min-height:min(590px,90vh);display:grid;grid-template-columns:205px 1fr;overflow:hidden;background:linear-gradient(135deg,#111c2cF5,#0b1321f7);border:1px solid #a8dfff26;border-radius:16px;box-shadow:0 35px 110px #000b;color:#eef7ff;font-family:Inter,system-ui,sans-serif;text-shadow:none}
+.lunarSide{display:flex;flex-direction:column;padding:24px 15px;background:#080e19c9;border-right:1px solid #a8dfff18}
+.lunarBrand{display:flex;align-items:center;gap:10px;padding:0 5px 27px;border-bottom:1px solid #ffffff12}
+.lunarMark{width:35px;height:35px;border-radius:10px;display:grid;place-items:center;background:linear-gradient(145deg,#d8f6ff,#5cb9ee);color:#071522;font-size:21px;box-shadow:0 5px 24px #5cb9ee44}
+.lunarBrand b{display:block;font-size:12px;letter-spacing:1.4px}.lunarBrand small{display:block;color:#6e91ad;font-size:8px;letter-spacing:1.8px;margin-top:3px}
+.sideLabel{font-size:9px;color:#637b96;letter-spacing:2px;font-weight:900;margin:27px 8px 10px}
+.sideLink{height:42px;display:flex;align-items:center;gap:12px;padding:0 11px;margin:3px 0;border:1px solid transparent;border-radius:8px;background:transparent;color:#92a7be;text-align:left;font-size:12px;font-weight:700;cursor:pointer}
+.sideLink span{font-size:17px;width:19px;text-align:center}.sideLink i{font-style:normal;margin-left:auto;font-size:8px;color:#7193af;background:#17273a;padding:3px 5px;border-radius:4px}
+.sideLink:hover,.sideLink.selected{background:linear-gradient(90deg,#1b3a54,#14263b);border-color:#6cc7f52b;color:#eaf8ff}
+.sideBottom{margin-top:auto;padding:13px 8px 0;border-top:1px solid #ffffff12;color:#9db1c5;font-size:10px}.sideBottom small{display:block;color:#59738d;font-size:8px;letter-spacing:1.5px;margin:7px 0 0 14px}
+.onlineDot{display:inline-block;width:7px;height:7px;border-radius:50%;background:#61e3ad;box-shadow:0 0 9px #61e3ad;margin-right:6px}
+.lunarMain{padding:23px 28px 17px;display:flex;flex-direction:column;min-width:0}
+.lunarTop{display:flex;justify-content:space-between;align-items:center;color:#718aa4;font-size:9px;font-weight:900;letter-spacing:1.7px}.lunarTop b{color:#c1d7e9}
+.buildTag{padding:6px 9px;border:1px solid #7dcdf32b;background:#7dcdf30c;border-radius:5px;color:#8fc9e8;font-size:8px;letter-spacing:1.2px}
+.welcomeCard{position:relative;overflow:hidden;min-height:300px;margin-top:22px;border:1px solid #8bd5ff2a;border-radius:12px;background:linear-gradient(112deg,#142d45,#12253b 54%,#1b3150);box-shadow:inset 0 1px #ffffff0b}
+.welcomeGlow{position:absolute;width:350px;height:350px;right:0;top:-110px;border-radius:50%;background:radial-gradient(circle,#56b9ec33,transparent 68%)}
+.welcomeContent{position:relative;z-index:1;padding:35px 32px}.lunarEyebrow{font-size:9px;color:#81c9ee;font-weight:900;letter-spacing:2px}
+.lunarTitle{font-size:clamp(39px,6vw,60px);font-weight:1000;letter-spacing:-3px;line-height:1.05;margin:14px 0 5px;color:#f1f8ff}.lunarTitle span{color:#8edbff}
+.welcomeContent p{font-size:12px;color:#a5bad0;margin:0}.welcomeMeta{display:flex;gap:15px;margin:18px 0;color:#6e91ad;font-size:8px;letter-spacing:1.2px;font-weight:900}
+.lunarPlay{height:43px;padding:0 20px;border:0;border-radius:7px;background:linear-gradient(110deg,#d8f5ff,#70c9f5 65%,#9ab6ff);color:#071727;font-size:10px;font-weight:1000;letter-spacing:1.1px;box-shadow:0 8px 24px #65bdeb33;cursor:pointer}
+.lunarPlay span{margin-right:7px}.lunarPlay:hover{filter:brightness(1.1);transform:translateY(-1px)}
+.blockArt{position:absolute;right:45px;top:55px;width:190px;height:190px;opacity:.8;transform:rotate(-18deg)}
+.blockCube{position:absolute;right:30px;top:20px;width:115px;height:115px;background:linear-gradient(135deg,#9bdfffaa 0 25%,#3d83b7 25% 55%,#245276 55%);border:1px solid #d2f4ff66;box-shadow:18px 18px 0 #0b1a2d88,0 0 45px #6dc8f344;clip-path:polygon(25% 0,100% 0,100% 75%,75% 100%,0 100%,0 25%)}
+.smallCube{width:58px;height:58px;right:125px;top:112px;background:linear-gradient(135deg,#b8ecff,#5b9bc4 55%,#28506d)}.tinyCube{width:34px;height:34px;right:8px;top:130px;background:linear-gradient(135deg,#c3f1ff,#477fa7 55%,#25435d)}
+.lunarTiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:13px}
+.lunarTile{min-width:0;display:flex;align-items:center;gap:10px;padding:13px 11px;text-align:left;border:1px solid #9acbe51c;border-radius:8px;background:#ffffff06;color:#e8f4ff;cursor:pointer}
+.lunarTile:hover{background:#8bd5ff12;border-color:#8bd5ff55}.tileIcon{width:30px;height:30px;flex:0 0 30px;display:grid;place-items:center;border-radius:7px;background:#8bd5ff15;color:#9bdfff;font-size:17px}
+.lunarTile span:nth-child(2){min-width:0;flex:1}.lunarTile b{display:block;font-size:10px}.lunarTile small{display:block;color:#728ba4;font-size:8px;margin-top:3px;white-space:nowrap}.lunarTile strong{color:#6f93af;font-size:19px}
+.lunarBottom{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:auto;padding-top:19px;color:#58718a;font-size:8px;letter-spacing:1.1px;font-weight:900}.lunarBottom b{color:#83c9ec}
+.lunarBottom button{border:0;background:none;color:#87b8d8;font-size:8px;font-weight:900;letter-spacing:1px;cursor:pointer}.lunarBottom button:hover{color:#d9f5ff}
+#frostHud{gap:8px;padding:8px 11px;top:12px;left:12px;border:1px solid #a4dfff28;border-radius:8px;background:#081321b8;backdrop-filter:blur(12px);box-shadow:0 8px 25px #0004}
+.frostLogo{border-radius:5px;clip-path:none;display:grid;place-items:center}.frostLogo:after{content:"✦";font-size:12px;color:#071522}
+#fpsValue{background:#10283a;border:1px solid #5fc6f333;color:#9ce4ff;border-radius:5px}
+#keyHud{padding:8px;background:#081321b9;border:1px solid #a4dfff2b;border-radius:8px;backdrop-filter:blur(12px);box-shadow:0 8px 25px #0004}
+#keyHud i{border-radius:5px;background:#172638;border:1px solid #40566c}#keyHud i.pressed{background:#76cffa;color:#071522;border-color:#d4f5ff;box-shadow:0 0 12px #62c9ff66}
+#moduleHud .modulePill{border-radius:6px;background:#081321d9;border-color:#69c9f355;backdrop-filter:blur(8px)}
+#top #coords{border-radius:7px;background:#081321b9;border-color:#a4dfff2b;backdrop-filter:blur(10px)}
+#hotbar{border-radius:8px;background:#081321c9;border:1px solid #a4dfff44;backdrop-filter:blur(12px);gap:4px;padding:5px}
+.slot{border-radius:5px;background:#172638;border:1px solid #60768a}.slot.active{border:2px solid #8ee0ff;background:#244c65;box-shadow:0 0 12px #65cafa55}
+@media(max-width:720px){#lunarShell{grid-template-columns:1fr;min-height:0;max-height:94vh;overflow:auto}.lunarSide{padding:12px 14px;flex-direction:row;align-items:center;border-right:0;border-bottom:1px solid #a8dfff18}.lunarBrand{padding:0;border:0}.sideLabel,.sideBottom{display:none}.sideLink{height:34px;margin-left:auto;padding:0 8px;font-size:10px}.sideLink span{display:none}.lunarMain{padding:15px}.welcomeCard{min-height:270px}.welcomeContent{padding:26px 20px}.blockArt{right:-35px;opacity:.35}.lunarTiles{grid-template-columns:1fr}.lunarTile{padding:10px}.lunarBottom{font-size:7px}}
+@media(max-width:430px){.lunarSide{gap:4px}.lunarBrand b{font-size:10px}.lunarBrand small{font-size:7px}.sideLink{font-size:9px}.buildTag{font-size:7px}.welcomeMeta{gap:8px;font-size:7px}}
 </style></head><body>
 <canvas id="view"></canvas><div id="frostHud"><div class="frostLogo"></div><span>FROST CLIENT</span><small id="frostVersion">1.8.8 (WEB)</small><b id="fpsValue">FPS --</b></div><div id="keyHud"><div><i id="keyW">W</i></div><div><i id="keyA">A</i><i id="keyS">S</i><i id="keyD">D</i></div><div><i id="keySpace">SPACE</i><i id="keySprint">SPRINT</i></div></div><div id="moduleHud"></div><div id="top"><div><div id="brand">❄ STAY FROST</div><div id="profile">FROSTCRAFT · <span id="version">1.8.8</span> PROFILE</div></div><div id="coords">X 0 · Y 0 · Z 0</div></div><div id="cross"></div><div id="statusbar"><div id="hearts">♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥</div><div id="food">● ● ● ● ● ● ● ● ● ●</div></div><div id="hotbar"></div><div id="help">WASD move · SPACE jump · SHIFT sprint<br>Mouse look · Left-click mine · Right-click place<br>1–9 select · E inventory · RIGHT SHIFT hack menu</div><div id="toast"></div><div id="gameMenu" class="hidden"><div class="menuCard"><div class="eyebrow">STAY FROST CLIENT</div><h2 id="menuTitle">Inventory</h2><div id="menuBody"></div><div class="menuActions"><button class="btn" id="resumeBtn">RESUME</button><button class="btn secondary" id="closeBtn">CLOSE</button></div></div></div>
-<div id="overlay"><div id="eaglerMenu">
- <div class="eaglerLogo"><div class="logoMain">FROST<span>CRAFT</span></div><div class="logoSub">BROWSER EDITION</div><div class="splash">Stay frosty!</div></div>
- <div class="menuButtons">
-  <button class="mcButton wide" id="start">Singleplayer</button>
-  <button class="mcButton wide" id="multiplayer">Multiplayer</button>
-  <div class="menuPair"><button class="mcButton" id="options">Options...</button><button class="mcButton" id="language">Language...</button></div>
-  <button class="mcButton wide" id="back">Back to Frost Client</button>
- </div>
- <div class="menuFooter"><span>FrostCraft Browser Edition</span><span>Not affiliated with Mojang or Microsoft</span></div>
- <div class="menuHint">WASD to move · Mouse to look · Left click to mine · Right click to place</div>
+<div id="overlay"><div id="lunarShell">
+ <aside class="lunarSide">
+  <div class="lunarBrand"><div class="lunarMark">❄</div><div><b>FROST CLIENT</b><small>FOR EAGLERCRAFT</small></div></div>
+  <div class="sideLabel">CLIENT</div>
+  <button class="sideLink selected" id="sideHome"><span>⌂</span> Home</button>
+  <button class="sideLink" id="sideMods"><span>▦</span> Mods <i>SHIFT</i></button>
+  <button class="sideLink" id="sideSettings"><span>⚙</span> Settings</button>
+  <div class="sideBottom"><span class="onlineDot"></span> Browser client ready <small>FROST · WEB</small></div>
+ </aside>
+ <main class="lunarMain">
+  <div class="lunarTop"><span>HOME <b>/ GAME</b></span><span class="buildTag">EAGLERCRAFT EDITION</span></div>
+  <section class="welcomeCard">
+   <div class="welcomeGlow"></div><div class="welcomeContent">
+    <div class="lunarEyebrow">✦ YOUR WORLD IS WAITING</div>
+    <div class="lunarTitle">FROST<span>CRAFT</span></div>
+    <p>A cleaner, smoother-feeling browser client experience.</p>
+    <div class="welcomeMeta"><span>● SINGLEPLAYER</span><span>● LOCAL WORLD</span></div>
+    <button class="lunarPlay" id="start"><span>▶</span> PLAY SINGLEPLAYER</button>
+   </div>
+   <div class="blockArt"><div class="blockCube"></div><div class="blockCube smallCube"></div><div class="blockCube tinyCube"></div></div>
+  </section>
+  <section class="lunarTiles">
+   <button class="lunarTile" id="multiplayer"><span class="tileIcon">◎</span><span><b>Multiplayer</b><small>Connect to a supported server</small></span><strong>›</strong></button>
+   <button class="lunarTile" id="options"><span class="tileIcon">⚙</span><span><b>Settings</b><small>Game and client preferences</small></span><strong>›</strong></button>
+   <button class="lunarTile" id="language"><span class="tileIcon">文</span><span><b>Language</b><small>Language options</small></span><strong>›</strong></button>
+  </section>
+  <div class="lunarBottom"><span>FROST CLIENT <b>·</b> EAGLERCRAFT BROWSER BUILD</span><button id="back">BACK TO LAUNCHER ↗</button></div>
+ </main>
 </div></div>
 <script>
 (()=>{"use strict";
@@ -80,6 +142,10 @@ document.getElementById("menuBody").addEventListener("click",e=>{const tab=e.tar
 document.getElementById("resumeBtn").onclick=()=>{document.getElementById("gameMenu").classList.add("hidden");canvas.requestPointerLock?.()};document.getElementById("closeBtn").onclick=()=>document.getElementById("gameMenu").classList.add("hidden");document.getElementById("menuBody").addEventListener("click",e=>{const mod=e.target.closest("[data-mod]"),slot=e.target.closest("[data-slot]");if(mod){const k=mod.dataset.mod;if(k==="fullbright")fullbright=!fullbright;if(k==="zoom")zoom=!zoom;if(k==="coords")showCoords=!showCoords;openMenu("mods");}if(slot){selected=+slot.dataset.slot;drawHotbar();document.getElementById("gameMenu").classList.add("hidden");canvas.requestPointerLock?.();}});function start(){playing=true;overlay.classList.add("hidden");last=performance.now();render();requestAnimationFrame(loop);canvas.requestPointerLock?.()}
 document.getElementById("start").onclick=start;document.getElementById("back").onclick=()=>location.href="./play.html";
 document.getElementById("multiplayer").onclick=()=>showToast("Multiplayer is not available in this local FrostCraft build yet.");
+document.getElementById("sideHome").onclick=()=>{};
+document.getElementById("sideMods").onclick=()=>{openMenu("mods")};
+document.getElementById("sideSettings").onclick=()=>showToast("Settings panel is coming soon.");
+
 document.getElementById("options").onclick=()=>showToast("Options: use M or Right Shift for Frost modules; F5 saves your world.");
 document.getElementById("language").onclick=()=>showToast("Language selection is coming soon.");
 addEventListener("keydown",e=>{keys[e.code]=true;if(e.code==="KeyE"&&playing){openMenu("inventory");return}if(e.code==="F5"&&playing){e.preventDefault();saveWorld();showToast("World saved on this device");return}if(e.code==="KeyM"&&playing){openMenu("mods");return}if(e.code==="ShiftRight"&&playing){openMenu("mods");return}if(e.code==="KeyC"&&playing){zoom=!zoom;showToast("Zoom "+(zoom?"enabled":"disabled"))}if(e.code==="Space"&&onGround){vy=7.2;onGround=false}if(e.code.startsWith("Digit")){let n=+e.code.slice(5);if(n>0&&n<=9){selected=n-1;drawHotbar()}}if(["Space","ArrowUp","ArrowDown"].includes(e.code))e.preventDefault()});addEventListener("keyup",e=>keys[e.code]=false);addEventListener("blur",()=>keys={});
